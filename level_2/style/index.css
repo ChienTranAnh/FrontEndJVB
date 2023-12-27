@@ -1,0 +1,338 @@
+body {
+    margin: auto;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+}
+
+/* ------- navbar ------- */
+.navbar {
+    display: flex;
+    /* background-color: #fff; */
+    padding: 15px;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar a {
+    color: #505F98;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    color: #fff;
+    background-color: #111B47;
+    font-weight: 800;
+}
+
+.navbar-logo {
+    width: 35%;
+    padding: 10px;;
+    color: #111B47;
+    font-size: 1.5em;
+    font-weight: 800;
+    text-transform: capitalize;
+
+}
+
+.navbar-button {
+    margin: 10px;
+    width: 160px;
+    height: auto;
+    background-color: #111B47;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+
+button:hover {
+    color: #111B47;
+    background-color: #fff;
+    font-weight: 800;
+}
+
+/* ------- Introduce ------- */
+.container {
+    width: 100%;
+    /* background-image: url('../background/designer_1.png'); */
+    /* background-size: 100% 100%; */
+    /* height: 1000px; */
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0px;
+    right: -12.5%;
+    z-index: 0;
+}
+
+.introduce {
+    margin: 200px 30px;
+    width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.introduce .title {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 66px;
+    color: #091133;
+}
+
+.introduce .paragraph {
+    padding: 15px 0px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color: #505F98;
+}
+
+.introduce .button {
+    padding: 30px 0px;
+}
+
+.introduce .button button {
+    width: 200px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    border: 1px solid #111B47;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+#purchase {
+    margin: 0px 20px 0px 0px;
+    background-color: #111B47;
+    color: #fff;
+}
+#more {
+    color: #111B47;
+}
+
+#purchase:hover {
+    background-color: #fff;
+    color: #111B47;
+    font-weight: 900;
+}
+#more:hover {
+    border: 1px solid #111B47;
+    background-color: #fff;
+    color: #111B47;
+    font-weight: 900;
+}
+
+/* ------- page 2 ------- */
+.container-1 {
+    margin: 500px 30px 300px 30px;
+    width: 100%;
+    position: relative;
+    /* z-index: 2; */
+}
+
+.container-1 .title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 66px;
+    color: #091133;
+}
+
+.container-1 .paragraph {
+    width: 50%;
+    color: #6F7CB2;
+    padding: 15px 0px;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.goes {
+    width: 600px;
+    display: flex;
+}
+
+.goes-title {
+    color: #091133;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: capitalize;
+    line-height: 26px;
+}
+
+.text {
+    padding: 10px 40px 0px 0px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.icon {
+    padding: 40px 0px 10px 0px;
+}
+
+.container-1 .background {
+    right: 0;
+}
+
+/* ------- page 3 ------- */
+.container-2 {
+    margin: 400px 30px 300px 30px;
+    width: 100%;
+    position: relative;
+}
+
+.container-2 .title, .container-2 .paragraph {
+    margin: 0px 0px 0px 30px;
+}
+
+.container-2 .title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    color: #091133;
+}
+
+.container-2 .background {
+    left: 0;
+    padding: 0% 0px 0px 30px;
+    display: flex;
+}
+
+.container-2 .right {
+    width: 50%;
+    right: 0;
+    position: absolute;
+}
+
+.container-2 .paragraph {
+    width: 85%;
+    color: #6F7CB2;
+    padding: 15px 0px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+/* ------- page 4 ------- */
+.container-3 {
+    margin: 950px 30px 300px 30px;
+    width: 100%;
+    position: relative;
+}
+
+.container-3 .title, .container-3 .paragraph {
+    margin: 0px 0px 0px 30px;
+}
+
+.container-3 .title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    color: #091133;
+}
+
+.container-3 .background {
+    left: 0;
+    padding: 0% 0px 0px 30px;
+    display: flex;
+}
+
+.container-3 .right {
+    width: 50%;
+    right: 0;
+    position: absolute;
+}
+
+.container-3 .paragraph {
+    width: 85%;
+    color: #6F7CB2;
+    padding: 15px 0px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+/* ------- page 5 ------- */
+.container-4 {
+    margin: 1600px 30px 300px 30px;
+    width: 100%;
+    position: relative;
+}
+
+.container-4 .title, .container-4 .paragraph {
+    margin: 0px 0px 0px 30px;
+}
+
+.container-4 .title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    color: #091133;
+}
+
+.container-4 .background {
+    left: 0;
+    padding: 0% 0px 0px 30px;
+    display: flex;
+}
+
+.container-4 .right {
+    width: 50%;
+    right: 0;
+    position: absolute;
+}
+
+.container-4 .paragraph {
+    width: 85%;
+    color: #6F7CB2;
+    padding: 15px 0px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.container-4 .button {
+    margin: 25px;
+}
+
+.container-4 .button button {
+    width: 150px;
+    padding: 3px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    background-color: #111B47;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.container-4 .button button:hover {
+    background-color: #fff;
+    color: #111B47;
+    font-weight: 900;
+    border: 1px solid #111B47;
+}
