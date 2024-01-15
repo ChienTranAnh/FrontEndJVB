@@ -14,7 +14,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6}>
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -26,7 +26,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="align-items-end">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -38,7 +38,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -50,7 +50,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -63,7 +63,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -75,7 +75,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -87,7 +87,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
@@ -99,7 +99,7 @@ export const Recommended: React.FC = () => {
                             <Col xs={6} sm={6} md={6} lg={6}>
                                 <h5>Black night</h5>
                             </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="">
+                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
                                 <Button className="me-2" variant="danger" size="sm">HD</Button>
                                 <Button variant="outline-danger" size="sm">Session 1</Button>
                             </Col>
