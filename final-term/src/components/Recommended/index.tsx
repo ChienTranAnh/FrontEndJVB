@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button, Col, Container, Row} from "react-bootstrap";
+import {Container, Row} from "react-bootstrap";
 import {urlImages} from "../../types";
+import {PropsRecommended} from "./PropsRecommended";
 
 export const Recommended: React.FC = () => {
     return (
@@ -8,103 +9,50 @@ export const Recommended: React.FC = () => {
             <h4 className="mb-5">You may also like</h4>
             <div className="justify-content-center">
                 <Row className="mb-4">
-                    <Col xs={3} sm={3} md={3} lg={3} className="mb-3">
-                        <img src={`${urlImages}/Frame 67.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 68.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 69.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 116.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 116.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 69.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 68.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
-                    <Col xs={3} sm={3} md={3} lg={3}>
-                        <img src={`${urlImages}/Frame 67.png`} alt="" className="w-100"/>
-                        <div className="d-flex mt-3">
-                            <Col xs={6} sm={6} md={6} lg={6}>
-                                <h5>Black night</h5>
-                            </Col>
-                            <Col xs={6} sm={6} md={6} lg={6} className="text-end">
-                                <Button className="me-2" variant="danger" size="sm">HD</Button>
-                                <Button variant="outline-danger" size="sm">Session 1</Button>
-                            </Col>
-                        </div>
-                    </Col>
+                    <PropsRecommended
+                        id={1}
+                        backdrop_path={`${urlImages}/Frame 67.png`}
+                        title="Black night"
+                        genre_ids={
+                            [
+                                {id: 1, name: "HD"},
+                                {id: 2, name: "Session 1"}
+                            ]
+                        }
+                    />
+                    <PropsRecommended
+                        id={3}
+                        backdrop_path={`${urlImages}/Frame 68.png`}
+                        title="Drops of God"
+                        genre_ids={
+                            [
+                                {id: 1, name: "HD"},
+                                {id: 2, name: "Session 1"}
+                            ]
+                        }
+                    />
+                    <PropsRecommended
+                        id={4}
+                        backdrop_path={`${urlImages}/Frame 69.png`}
+                        title="Scoop"
+                        genre_ids={
+                            [
+                                {id: 1, name: "HD"},
+                                {id: 2, name: "Session 1"}
+                            ]
+                        }
+                    />
+                    <PropsRecommended
+                        id={6}
+                        backdrop_path={`${urlImages}/Frame 116.png`}
+                        title="The Prank Panel"
+                        genre_ids={
+                            [
+                                {id: 1, name: "HD"},
+                                {id: 2, name: "Session 1"}
+                            ]
+                        }
+                    />
                 </Row>
             </div>
         </Container>
