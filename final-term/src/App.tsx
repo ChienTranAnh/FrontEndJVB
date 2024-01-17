@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import {AppNavbar} from "./components/Navbar";
-import {Recommended} from "./components/Recommended";
-import {Comments} from "./components/Comments";
-import {Movie} from "./components/Movie";
+import AppNavbar from "./components/Navbar";
+import Recommended from "./components/Recommended";
+import Comments from "./components/Comments";
+import Movie from "./components/Movie";
 
 function App() {
     return (

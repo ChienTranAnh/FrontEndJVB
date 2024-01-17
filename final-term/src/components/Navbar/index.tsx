@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Form, FormControl, Nav, Navbar, Row} from "react-bootstrap";
 import {urlImages} from "../../types";
 
-export const AppNavbar:React.FC = () => {
+const AppNavbar:React.FC = () => {
 
     return (
         <Navbar bg="black" variant="dark" expand="lg">
@@ -34,3 +34,5 @@ export const AppNavbar:React.FC = () => {
         </Navbar>
     );
 };
+
+export default AppNavbar;

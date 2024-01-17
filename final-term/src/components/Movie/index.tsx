@@ -2,7 +2,7 @@ import React from "react";
 import {Button, Col, Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import {urlImages} from "../../types";
 
-export const Movie: React.FC = () => {
+const Movie: React.FC = () => {
     return (
         <Container className="mt-5 mb-5">
             <div className="mb-5">
@@ -171,3 +171,5 @@ export const Movie: React.FC = () => {
         </Container>
     );
 };
+
+export default Movie;

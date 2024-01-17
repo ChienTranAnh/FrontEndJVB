@@ -2,12 +2,11 @@ import React from "react";
 import {Button, Col} from "react-bootstrap";
 import {Movies} from "../../types";
 
-interface movieProps {
+interface ObjMovie {
     movie: Movies
 }
 
-export const PropsRecommended:React.FC<movieProps> = ({movie}) => {
-// export const PropsRecommended = ({backdrop_path, title, genre_ids}: Movies) => {
+const PropsRecommended:React.FC<ObjMovie> = ({movie}) => {
     return (
         <Col xs={3} sm={3} md={3} lg={3} className="mb-3">
             <img src={movie.backdrop_path} alt="" className="w-100"/>
@@ -35,3 +34,5 @@ export const PropsRecommended:React.FC<movieProps> = ({movie}) => {
         </Col>
     );
 };
+
+export default PropsRecommended;
