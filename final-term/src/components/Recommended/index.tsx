@@ -1,15 +1,18 @@
 import React from 'react';
 import {Container, Row} from "react-bootstrap";
-import {urlImages} from "../../types";
+import {urlImages, movieDefault} from "../../types";
 import {PropsRecommended} from "./PropsRecommended";
 
 export const Recommended: React.FC = () => {
+    /**/
+
     return (
         <Container className="mt-4 mb-4 align-items-start">
             <h4 className="mb-5">You may also like</h4>
             <div className="justify-content-center">
                 <Row className="mb-4">
-                    <PropsRecommended
+                    {/*<PropsRecommended movie={movieDefault} />*/}
+                    {/*<PropsRecommended
                         id={1}
                         backdrop_path={`${urlImages}/Frame 67.png`}
                         title="Black night"
@@ -52,7 +55,10 @@ export const Recommended: React.FC = () => {
                                 {id: 2, name: "Session 1"}
                             ]
                         }
-                    />
+                    />*/}
+
+                    <PropsRecommended movie={movieDefault} />
+                    <PropsRecommended movie={movieDefault} />
                 </Row>
             </div>
         </Container>

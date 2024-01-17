@@ -9,7 +9,7 @@ export const Comments: React.FC = () => {
             <Row className="mt-4 mb-4">
                 <Col xs={2} sm={2} md={2} lg={2}>
                     <div>
-                        <img src={`${urlImages}/Ellipse 13.png`} alt=""/>
+                        <img src={`${urlImages}/Ellipse 13.png`} alt="" className="w-100"/>
                     </div>
                 </Col>
                 <Col xs={10} sm={10} md={10} lg={10}>
@@ -24,7 +24,7 @@ export const Comments: React.FC = () => {
             <Row className="mt-4 mb-4">
                 <Col xs={2} sm={2} md={2} lg={2}>
                     <div>
-                        <img src={`${urlImages}/Ellipse 10.png`} alt=""/>
+                        <img src={`${urlImages}/Ellipse 10.png`} alt="" className="w-100"/>
                     </div>
                 </Col>
                 <Col xs={10} sm={10} md={10} lg={10}>
@@ -42,7 +42,7 @@ export const Comments: React.FC = () => {
             <Row className="mt-4 mb-4">
                 <Col xs={2} sm={2} md={2} lg={2}>
                     <div>
-                        <img src={`${urlImages}/Ellipse 11.png`} alt=""/>
+                        <img src={`${urlImages}/Ellipse 11.png`} alt="" className="w-100"/>
                     </div>
                 </Col>
                 <Col xs={10} sm={10} md={10} lg={10}>
@@ -60,7 +60,7 @@ export const Comments: React.FC = () => {
             <Row className="mt-4 mb-4">
                 <Col xs={2} sm={2} md={2} lg={2}>
                     <div>
-                        <img src={`${urlImages}/Ellipse 12.png`} alt=""/>
+                        <img src={`${urlImages}/Ellipse 12.png`} alt="" className="w-100"/>
                     </div>
                 </Col>
                 <Col xs={10} sm={10} md={10} lg={10}>
