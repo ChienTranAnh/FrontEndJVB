@@ -1,7 +1,8 @@
 import React from "react";
-import {Button, Col, Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
+import {Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import {useQuery} from "@tanstack/react-query";
-import {defaultMovieDetail, defaultVideoMovie, urlImages} from "../../types/DefaultValue";
+import {Route, Routes} from "react-router-dom";
+import {defaultMovieDetail, defaultVideoMovie} from "../../types/DefaultValue";
 import PropsMovieDetail from "./PropsMovieDetail";
 import PropsPlayer from "./PropsPlayer";
 import PropsVideoEp from "./PropsVideoEp";
@@ -11,11 +12,36 @@ const Movie: React.FC = () => {
     const detailMovie = useQuery({queryKey: ['detailMovie'], queryFn: fetchDetailMovie});
     const movieVideo = useQuery({queryKey: ['movieVideo'], queryFn: fetchMovieVideo});
 
+    if (detailMovie.error) {
+        return <script>alert(`Error: {detailMovie.error.message}`)</script>;
+    }
+    if (movieVideo.error) {
+        return <script>alert(`Error: {movieVideo.error.message}`)</script>;
+    }
+
+    if (detailMovie.isLoading) {
+        return (
+            <Container className="mt-5 mb-5">
+                {/* <PropsPlayer player=""/>*/}
+                <PropsMovieDetail detailMovie={defaultMovieDetail}/>
+                <div className="mt-5 mb-5">
+                    <Row className="mt-3 gy-3">
+                        {/*<PropsVideoEp episode={defaultVideoMovie}/>*/}
+                    </Row>
+                </div>
+            </Container>
+        );
+    }
+
     return (
         <Container className="mt-5 mb-5">
-            <PropsPlayer/>
+            <Routes>
+                <Route path="/:videoKey" element={<PropsPlayer/>}/>
+                {/*movieVideo.isSuccess ? <PropsPlayer player=""/> : <PropsPlayer player=""/>*/}
+            </Routes>
             {
-                detailMovie.isSuccess ? <PropsMovieDetail key={detailMovie.data.id} detailMovie={detailMovie.data}/> : <PropsMovieDetail detailMovie={defaultMovieDetail}/>
+                detailMovie.isSuccess ? <PropsMovieDetail key={detailMovie.data.id} detailMovie={detailMovie.data}/> :
+                    <PropsMovieDetail detailMovie={defaultMovieDetail}/>
             }
             <div className="mt-5 mb-5">
                 <Navbar variant="dark" bg="black" expand="lg">
@@ -34,25 +60,14 @@ const Movie: React.FC = () => {
                     </Navbar.Collapse>
                 </Navbar>
 
-                {/*<Row className="mt-3">
-                    <Col xs={6} sm={6} md={6} lg={6}>
-                        <Button variant="danger" className="w-100 p-2 text-start border-4">
-                            <img src={`${urlImages}/play-white.svg`} alt="" className="me-2 mb-1"/>
-                            Episode 1: Freedom Day
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="light" className="w-100 p-2 text-start border-4">
-                            <img src={`${urlImages}/play-gray.svg`} alt="" className="me-2 mb-1"/>
-                            Episode 4: Truth
-                        </Button>
-                    </Col>
-                </Row>*/}
                 <Row className="mt-3 gy-3">
                     {
-                        movieVideo.isSuccess ? movieVideo.data.map((video)=>(
+                        <Routes>
+                            <Route path="/" element={<PropsVideoEp/>}/>
+                        </Routes>
+                        /*movieVideo.isSuccess ? movieVideo.data.map((video) => (
                             <PropsVideoEp key={video.id} episode={video}/>
-                        )): <PropsVideoEp episode={defaultVideoMovie}/>
+                        )) : <PropsVideoEp episode={defaultVideoMovie}/>*/
                     }
                 </Row>
             </div>
