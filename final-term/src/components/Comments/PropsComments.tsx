@@ -1,13 +1,14 @@
 import React from "react";
 import {Col, Row} from "react-bootstrap";
-import {Reviewer, urlImages} from "../../types";
 import {format} from "date-fns";
+import {ObjReviewer} from "../../types/Obj";
+import {urlImages, urlPoster} from "../../types/DefaultValue";
 
-interface ObjReviewer {
-    reviewer: Reviewer;
+interface PropsReviewer {
+    reviewer: ObjReviewer;
 };
 
-const PropsComments: React.FC<ObjReviewer> = ({reviewer}) => {
+const PropsComments: React.FC<PropsReviewer> = ({reviewer}) => {
 
     const formattedDate = [
         format(new Date(reviewer.created_at), 'y/M/d'),
@@ -18,11 +19,9 @@ const PropsComments: React.FC<ObjReviewer> = ({reviewer}) => {
         <Row key={reviewer.id} className="mt-4 mb-4">
             <Col xs={2} sm={2} md={2} lg={2}>
                 <div>
-                    {
-                        reviewer.author_details && reviewer.author_details.map((rev) => (
-                            <img src={rev.avatar_path} alt="" className="w-100"/>
-                        ))
-                    }
+                        <img src={
+                            reviewer.author_details.avatar_path ? `${urlPoster}`+reviewer.author_details.avatar_path : `${urlImages}/Ellipse 11.png`
+                        } alt={reviewer.author_details.username} className="w-100" style={{borderRadius:'50%'}}/>
                 </div>
             </Col>
             <Col xs={10} sm={10} md={10} lg={10}>
@@ -31,12 +30,11 @@ const PropsComments: React.FC<ObjReviewer> = ({reviewer}) => {
                     <p>{formattedDate.join(' | ')}</p>
                     <p>{reviewer.content}</p>
                     {
-                        reviewer.author_details && reviewer.author_details.map((rev) => (
+                        reviewer.author_details.rating ?
                             <>
-                                <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/>{rev.rating}</span>
+                                <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/> {reviewer.author_details.rating}</span>
                                 <span className="me-5"><img src={`${urlImages}/dislike.svg`} alt="disLike"/></span>
-                            </>
-                        ))
+                            </> : <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/> 0</span>
                     }
                     <span>Reply</span>
                 </div>

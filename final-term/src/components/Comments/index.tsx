@@ -1,9 +1,13 @@
 import React from "react";
 import {Col, Container, Form, Row} from "react-bootstrap";
-import {defaultReviewer, urlImages} from "../../types";
+import {defaultReviewer, urlImages} from "../../types/DefaultValue";
 import PropsComments from "./PropsComments";
+import {useQuery} from "@tanstack/react-query";
+import {fetchReviewer} from "../../api";
 
 const Comments: React.FC = () => {
+    const {isLoading, data, error, isSuccess} = useQuery({queryKey:['review'], queryFn:fetchReviewer});
+
     return (
         <Container className="mt-4 mb-4">
             <h4 className="mt-5 mb-5">Comments</h4>
@@ -22,7 +26,11 @@ const Comments: React.FC = () => {
                     </Form>
                 </Col>
             </Row>
-            <PropsComments reviewer={defaultReviewer}/>
+            {
+                isSuccess ? data.map((cmt)=>(
+                    <PropsComments key={cmt.id} reviewer={cmt}/>
+                )): <PropsComments reviewer={defaultReviewer}/>
+            }
             <div className="p-5"></div>
         </Container>
     );

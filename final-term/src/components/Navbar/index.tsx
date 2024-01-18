@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Form, FormControl, Nav, Navbar, Row} from "react-bootstrap";
-import {urlImages} from "../../types";
+import {urlImages} from "../../types/DefaultValue";
 
 const AppNavbar:React.FC = () => {
 
