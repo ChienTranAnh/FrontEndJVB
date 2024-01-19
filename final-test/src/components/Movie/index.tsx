@@ -2,7 +2,7 @@ import React from "react";
 import {Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import {useQuery} from "@tanstack/react-query";
 import {Route, Routes} from "react-router-dom";
-import {defaultMovieDetail, defaultVideoMovie} from "../../types/DefaultValue";
+import {defaultMovieDetail} from "../../types/DefaultValue";
 import PropsMovieDetail from "./PropsMovieDetail";
 import PropsPlayer from "./PropsPlayer";
 import PropsVideoEp from "./PropsVideoEp";
@@ -22,11 +22,11 @@ const Movie: React.FC = () => {
     if (detailMovie.isLoading) {
         return (
             <Container className="mt-5 mb-5">
-                {/* <PropsPlayer player=""/>*/}
+                <PropsPlayer/>
                 <PropsMovieDetail detailMovie={defaultMovieDetail}/>
                 <div className="mt-5 mb-5">
                     <Row className="mt-3 gy-3">
-                        {/*<PropsVideoEp episode={defaultVideoMovie}/>*/}
+                        <PropsVideoEp/>
                     </Row>
                 </div>
             </Container>
@@ -36,7 +36,7 @@ const Movie: React.FC = () => {
     return (
         <Container className="mt-5 mb-5">
             <Routes>
-                <Route path="/:videoKey" element={<PropsPlayer/>}/>
+                <Route path="/video/:videoKey" element={<PropsPlayer/>}/>
                 {/*movieVideo.isSuccess ? <PropsPlayer player=""/> : <PropsPlayer player=""/>*/}
             </Routes>
             {

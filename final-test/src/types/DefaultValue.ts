@@ -1,5 +1,9 @@
+/* urlMovie */
 export const urlMovie = 'https://api.themoviedb.org/3/movie';
+
+/* urlPoster */
 export const urlPoster = 'https://image.tmdb.org/t/p/w500';
+
 /* urlImages */
 export const urlImages = './images';
 
@@ -58,7 +62,7 @@ export const defaultReviewer = {
             avatar_path: `${urlImages}/Ellipse 11.png`,
             rating: 8
         },
-    content: "FULL SPOILER-FREE REVIEW @ https://fandomwire.com/society-of-the-snow-review-a-harrowing-tale/\r\n\r\n\"Society of the Snow unquestionably solidifies J. A. Bayona's status as an absurdly underrated filmmaker.\r\n\r\nOne of the most unbelievable, harrowing survival stories ever recreated, brought to life by a truly remarkable ensemble cast, breathtaking cinematography that captures the awe-inspiring yet treacherous landscapes, a deeply stirring score that tugs at the heartstrings, and a plane crash sequence like you've never seen before.\r\n\r\nThe convergence of these elements transforms an admittedly predictable survival piece into a visceral, emotionally resonant experience, urging audiences to reflect on the thoughtfully handled themes of human resilience, beliefs, and perseverance.\r\n\r\nA must-watch, especially on the big screen if possible.\"\r\n\r\nRating: A-",
+    content: "Vampire Diaries Series",
     created_at: "2023-12-30T16:43:12.164Z",
     id: "659048a0e004a66cec172ff7",
     updated_at: "2023-12-30T16:43:12.255Z",

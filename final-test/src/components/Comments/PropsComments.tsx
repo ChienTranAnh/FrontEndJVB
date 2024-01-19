@@ -6,7 +6,7 @@ import {urlImages, urlPoster} from "../../types/DefaultValue";
 
 interface PropsReviewer {
     reviewer: ObjReviewer;
-};
+}
 
 const PropsComments: React.FC<PropsReviewer> = ({reviewer}) => {
 
@@ -21,23 +21,27 @@ const PropsComments: React.FC<PropsReviewer> = ({reviewer}) => {
                 <div>
                         <img src={
                             reviewer.author_details.avatar_path ? `${urlPoster}`+reviewer.author_details.avatar_path : `${urlImages}/Ellipse 11.png`
-                        } alt={reviewer.author_details.username} className="w-100" style={{borderRadius:'50%'}}/>
+                        } alt={reviewer.author_details.username} style={{width:'160px',height:'160px',objectFit:"cover",borderRadius:'50%'}}/>
                 </div>
             </Col>
             <Col xs={10} sm={10} md={10} lg={10}>
-                <div className="col-md-10">
+                <Col xs={10} sm={10} md={10} lg={10} style={{textAlign:'justify'}}>
                     <p>{reviewer.author}</p>
                     <p>{formattedDate.join(' | ')}</p>
                     <p>{reviewer.content}</p>
                     {
                         reviewer.author_details.rating ?
-                            <>
-                                <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/> {reviewer.author_details.rating}</span>
-                                <span className="me-5"><img src={`${urlImages}/dislike.svg`} alt="disLike"/></span>
-                            </> : <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/> 0</span>
+                        <p>
+                            <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/> {reviewer.author_details.rating}</span>
+                            <span className="me-5"><img src={`${urlImages}/dislike.svg`} alt="disLike"/></span>
+                            <span>Reply</span>
+                        </p>
+                        :
+                        <p>
+                            <span className="me-5"><img src={`${urlImages}/like.svg`} alt="Like"/> 0</span>
+                        </p>
                     }
-                    <span>Reply</span>
-                </div>
+                </Col>
             </Col>
         </Row>
     );

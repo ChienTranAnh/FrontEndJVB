@@ -43,7 +43,7 @@ const Comments: React.FC = () => {
             <Row className="mt-4 mb-4">
                 <Col xs={2} sm={2} md={2} lg={2}>
                     <div>
-                        <img src={`${urlImages}/defaultAvt.png`} alt="" className="w-100"/>
+                        <img src={`${urlImages}/defaultAvt.png`} alt="CHOEN" style={{width:'160px',height:'160px',objectFit:"cover",borderRadius:'50%'}}/>
                     </div>
                 </Col>
                 <Col xs={10} sm={10} md={10} lg={10}>

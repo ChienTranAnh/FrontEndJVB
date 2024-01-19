@@ -1,5 +1,6 @@
 import React from "react";
 import {Button, Col} from "react-bootstrap";
+import {Routes, Route, Link} from "react-router-dom";
 import {ObjMovies} from "../../types/Obj";
 import {urlPoster} from "../../types/DefaultValue";
 
@@ -10,10 +11,12 @@ interface MovieProps {
 const PropsRecommended: React.FC<MovieProps> = ({movie}) => {
     return (
         <Col xs={3} sm={3} md={3} lg={3} className="mb-3">
-            <img src={
-                movie.id !== 0 ?
-                    `${urlPoster}` + movie.poster_path : movie.poster_path
-            } alt="" className="w-100"/>
+            <Link to={'/movie/'+String(movie.id)}>
+                <img src={
+                    movie.id !== 0 ?
+                        `${urlPoster}` + movie.poster_path : movie.poster_path
+                } alt="" className="w-100"/>
+            </Link>
             <div className="d-flex mt-3">
                 <Col xs={6} sm={6} md={6} lg={6}>
                     <h5>{movie.title}</h5>
@@ -27,6 +30,9 @@ const PropsRecommended: React.FC<MovieProps> = ({movie}) => {
                     }
                 </Col>
             </div>
+            <Routes>
+                <Route key={movie.id} path={'/movie/'+String(movie.id)}/>
+            </Routes>
         </Col>
     );
 };

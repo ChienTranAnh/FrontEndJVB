@@ -1,6 +1,5 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-import {urlImages} from "../../types/DefaultValue";
 
 interface VideoProps {
 }
@@ -14,7 +13,7 @@ const PropsPlayer: React.FC<VideoProps> = () => {
     const videoUrl = `${youtubeBaseUrl}${videoKey}`;
 
     return (
-        <div className="mb-5" style={{height: '800px'}}>
+        <div className="mb-5" style={{height: '650px'}}>
             <iframe
                 title="YouTube Video"
                 src={videoUrl}
