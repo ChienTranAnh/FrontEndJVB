@@ -9,7 +9,7 @@ import PropsVideoEp from "./PropsVideoEp";
 import {fetchDetailMovie, fetchMovieVideo} from "../../api";
 
 const Common: React.FC = () => {
-    let {movieKey} = useParams();
+    let {movieKey, videoKey} = useParams();
 
     const detailMovie = useQuery({queryKey: ['detailMovie', movieKey], queryFn: () => fetchDetailMovie(movieKey ?? '906126')});
     const movieVideo = useQuery({queryKey: ['movieVideo', movieKey], queryFn: () =>  fetchMovieVideo(movieKey ?? '906126')});
@@ -28,7 +28,7 @@ const Common: React.FC = () => {
                 <PropsMovieDetail detailMovie={defaultMovieDetail}/>
                 <div className="mt-5 mb-5">
                     <Row className="mt-3 gy-3">
-                        <PropsVideoEp episode={defaultVideoMovie}/>
+                        <PropsVideoEp episode={defaultVideoMovie} movie={defaultMovieDetail} />
                     </Row>
                 </div>
             </Container>
@@ -37,7 +37,13 @@ const Common: React.FC = () => {
 
     return (
         <Container className="mt-5 mb-5">
-            <PropsPlayer/>
+            <PropsPlayer 
+                firstEpisodeKey={
+                    movieVideo.isSuccess && movieVideo.data?.length > 0 
+                    ? movieVideo.data[0].key
+                    : null
+                }
+            />
             {
                 detailMovie.isSuccess ? <PropsMovieDetail key={detailMovie.data.id} detailMovie={detailMovie.data}/> :
                     <PropsMovieDetail detailMovie={defaultMovieDetail}/>
@@ -61,13 +67,9 @@ const Common: React.FC = () => {
 
                 <Row className="mt-3 gy-3">
                     {
-                        <Routes>
-                            <Route path="*" element={
-                                movieVideo.isSuccess ? movieVideo.data.map((video) => (
-                                    <PropsVideoEp key={video.id} episode={video}/>
-                                )) : <PropsVideoEp episode={defaultVideoMovie}/>
-                            }/>
-                        </Routes>
+                        movieVideo.isSuccess && detailMovie.isSuccess && movieVideo.data.map((video) => (
+                            <PropsVideoEp key={video.id} episode={video} movie={detailMovie.data} />
+                        ))
                     }
                 </Row>
             </div>

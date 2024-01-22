@@ -9,7 +9,7 @@ interface MovieProps {
 }
 
 const PropsRecommended: React.FC<MovieProps> = ({movie}) => {
-    console.log(movie.id);
+    // console.log(movie.id);
     return (
         <Col xs={3} sm={3} md={3} lg={3} className="mb-3">
             <Link to={'/movie/'+String(movie.id)} onClick={() => window.scrollTo({top:500, left: 0})}>
