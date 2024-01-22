@@ -18,8 +18,8 @@ root.render(
         <QueryClientProvider client={queryClient}>
             <Router>
                 <Routes>
-                    <Route path={"/movie/:movieKey/*"} element={<Movie/>}/>
-                    <Route path={"/video/:videoKey/*"} element={<Movie/>}/>
+                    <Route path={"/movie/:movieKey"} element={<Movie/>}/>
+                    <Route path={"/movie/:movieKey/video/:videoKey/*"} element={<Movie/>}/>
                     <Route path={"*"} element={<App/>}/>
                 </Routes>
             </Router>

@@ -2,16 +2,17 @@ import React from "react";
 import {useParams} from "react-router-dom";
 
 interface VideoProps {
+    firstEpisodeKey?: string | undefined | null;
 }
 
-const PropsPlayer: React.FC<VideoProps> = () => {
-
+const PropsPlayer: React.FC<VideoProps> = ({firstEpisodeKey}) => {
     // Lấy videoKey từ URL
     const {videoKey} = useParams<{ videoKey: string }>();
+    console.log(videoKey);
 
     const youtubeBaseUrl = 'https://www.youtube.com/embed/';
-    const videoUrl = `${youtubeBaseUrl}${videoKey??'W6v9lHA6Bcw'}`;
-    console.log(3476546,videoUrl);
+    const videoUrl = `${youtubeBaseUrl}${videoKey ?? (firstEpisodeKey??'W6v9lHA6Bcw')}`;
+    // console.log(3476546,videoUrl);
 
     return (
         <div className="mb-5" style={{height: '650px'}}>
