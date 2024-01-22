@@ -23,22 +23,22 @@ export const fetchGenre = async (): Promise<ObjGenres[]> => {
     return data.genres;
 };
 
-export const fetchDetailMovie = async (): Promise<ObjMovieDetail> => {
-    const response = await fetch(`${urlMovie}/906126?language=en-US`, authenticator);
+export const fetchDetailMovie = async (movieKey: string): Promise<ObjMovieDetail> => {
+    const response = await fetch(`${urlMovie}/${movieKey}?language=en-US`, authenticator);
     const data = await response.json();
 
     return data;
 };
 
-export const fetchMovieVideo = async (): Promise<ObjVideoMovie[]> => {
-    const response = await fetch(`${urlMovie}/906126/videos?language=en-US`, authenticator);
+export const fetchMovieVideo = async (movieKey: string): Promise<ObjVideoMovie[]> => {
+    const response = await fetch(`${urlMovie}/${movieKey}/videos?language=en-US`, authenticator);
     const data = await response.json();
 
     return data.results;
 };
 
-export const fetchReviewer = async (): Promise<ObjReviewer[]> => {
-    const response = await fetch(`${urlMovie}/906126/reviews?language=en-US&page=1`, authenticator);
+export const fetchReviewer = async (movieKey: string): Promise<ObjReviewer[]> => {
+    const response = await fetch(`${urlMovie}/${movieKey}/reviews?language=en-US&page=1`, authenticator);
     const data = await response.json();
 
     return data.results;

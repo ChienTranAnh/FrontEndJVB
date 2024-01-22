@@ -1,12 +1,17 @@
 import React from "react";
 import {Col, Container, Form, Row} from "react-bootstrap";
+import {useParams} from "react-router-dom";
 import {useQuery} from "@tanstack/react-query";
 import {defaultReviewer, urlImages} from "../../types/DefaultValue";
 import PropsComments from "./PropsComments";
 import {fetchReviewer} from "../../api";
 
 const Comments: React.FC = () => {
-    const {isLoading, data, error, isSuccess} = useQuery({queryKey:['review'], queryFn:fetchReviewer});
+    let {movieKey} = useParams();
+
+    const {isLoading, data, error, isSuccess} = useQuery(
+        {queryKey: ['review', movieKey], queryFn: () => fetchReviewer(movieKey ?? '129')}
+    );
 
     if (error) {
         return <script>alert(`Error: {error.message}`)</script>;
@@ -43,7 +48,8 @@ const Comments: React.FC = () => {
             <Row className="mt-4 mb-4">
                 <Col xs={2} sm={2} md={2} lg={2}>
                     <div>
-                        <img src={`${urlImages}/defaultAvt.png`} alt="CHOEN" style={{width:'160px',height:'160px',objectFit:"cover",borderRadius:'50%'}}/>
+                        <img src={`${urlImages}/defaultAvt.png`} alt="CHOEN"
+                             style={{width: '160px', height: '160px', objectFit: "cover", borderRadius: '50%'}}/>
                     </div>
                 </Col>
                 <Col xs={10} sm={10} md={10} lg={10}>
@@ -56,9 +62,9 @@ const Comments: React.FC = () => {
                 </Col>
             </Row>
             {
-                isSuccess ? data.map((cmt)=>(
+                isSuccess ? data.map((cmt) => (
                     <PropsComments key={cmt.id} reviewer={cmt}/>
-                )): <PropsComments reviewer={defaultReviewer}/>
+                )) : <PropsComments reviewer={defaultReviewer}/>
             }
             <div className="p-5"></div>
         </Container>

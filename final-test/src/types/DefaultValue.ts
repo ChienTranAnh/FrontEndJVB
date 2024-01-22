@@ -96,7 +96,7 @@ export const defaultMovieDetail = {
     original_title: "La sociedad de la nieve",
     overview: "On October 13, 1972, Uruguayan Air Force Flight 571, chartered to take a rugby team to Chile, crashes into a glacier in the heart of the Andes.",
     popularity: 1353.286,
-    poster_path: "/2e853FDVSIso600RqAMunPxiZjq.jpg",
+    poster_path: `${urlImages}/noimage.jpg`,
     production_companies: [
         {
             id: 207052,
@@ -144,4 +144,3 @@ export const defaultMovieDetail = {
     vote_average: 8.054,
     vote_count: 933
 };
-

@@ -1,16 +1,22 @@
 import React from "react";
 import {Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import {useQuery} from "@tanstack/react-query";
-import {Route, Routes} from "react-router-dom";
+import {useParams} from "react-router-dom";
+import {fetchDetailMovie, fetchMovieVideo} from "../../api";
 import {defaultMovieDetail, defaultVideoMovie} from "../../types/DefaultValue";
 import PropsMovieDetail from "./PropsMovieDetail";
 import PropsPlayer from "./PropsPlayer";
 import PropsVideoEp from "./PropsVideoEp";
-import {fetchDetailMovie, fetchMovieVideo} from "../../api";
 
 const Common: React.FC = () => {
-    const detailMovie = useQuery({queryKey: ['detailMovie'], queryFn: fetchDetailMovie});
-    const movieVideo = useQuery({queryKey: ['movieVideo'], queryFn: fetchMovieVideo});
+    let {movieKey} = useParams();
+    console.log(movieKey);
+    const detailMovie = useQuery(
+        {queryKey: ['detailMovie', movieKey], queryFn: () => fetchDetailMovie(movieKey ?? '129')}
+    );
+    const movieVideo = useQuery(
+        {queryKey: ['movieVideo', movieKey], queryFn: () => fetchMovieVideo(movieKey ?? '129')}
+    );
 
     if (detailMovie.error) {
         return <script>alert(`Error: {detailMovie.error.message}`)</script>;
@@ -22,11 +28,10 @@ const Common: React.FC = () => {
     if (detailMovie.isLoading) {
         return (
             <Container className="mt-5 mb-5">
-                <PropsPlayer/>
                 <PropsMovieDetail detailMovie={defaultMovieDetail}/>
                 <div className="mt-5 mb-5">
                     <Row className="mt-3 gy-3">
-                        <PropsVideoEp episode={defaultVideoMovie}/>
+                        <PropsVideoEp episode={defaultVideoMovie} movie={defaultMovieDetail}/>
                     </Row>
                 </div>
             </Container>
@@ -35,10 +40,13 @@ const Common: React.FC = () => {
 
     return (
         <Container className="mt-5 mb-5">
-            <Routes>
-                <Route path="/video/:videoKey/*" element={<PropsPlayer/>}/>
-                <Route path="" element={<PropsPlayer/>}/>
-            </Routes>
+            <PropsPlayer
+                firstEpisodeKey={
+                    movieVideo.isSuccess && movieVideo.data?.length > 0
+                        ? movieVideo.data[0].key
+                        : null
+                }
+            />
             {
                 detailMovie.isSuccess ? <PropsMovieDetail key={detailMovie.data.id} detailMovie={detailMovie.data}/> :
                     <PropsMovieDetail detailMovie={defaultMovieDetail}/>
@@ -62,13 +70,9 @@ const Common: React.FC = () => {
 
                 <Row className="mt-3 gy-3">
                     {
-                        <Routes>
-                            <Route path="*" element={
-                                movieVideo.isSuccess ? movieVideo.data.map((video) => (
-                                    <PropsVideoEp key={video.id} episode={video}/>
-                                )) : <PropsVideoEp episode={defaultVideoMovie}/>
-                            }/>
-                        </Routes>
+                        movieVideo.isSuccess && detailMovie.isSuccess && movieVideo.data.map((video) => (
+                            <PropsVideoEp key={video.id} episode={video} movie={detailMovie.data}/>
+                        ))
                     }
                 </Row>
             </div>

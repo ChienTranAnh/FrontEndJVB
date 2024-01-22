@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Col} from "react-bootstrap";
-import {Routes, Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {ObjMovies} from "../../types/Obj";
 import {urlPoster} from "../../types/DefaultValue";
 
@@ -11,7 +11,9 @@ interface MovieProps {
 const PropsRecommended: React.FC<MovieProps> = ({movie}) => {
     return (
         <Col xs={3} sm={3} md={3} lg={3} className="mb-3">
-            <Link to={'/movie/'+String(movie.id)}>
+            <Link to={'/movie/' + String(movie.id)} onClick={() => {
+                window.scrollTo({top: 0})
+            }}>
                 <img src={
                     movie.id !== 0 ?
                         `${urlPoster}` + movie.poster_path : movie.poster_path

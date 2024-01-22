@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Form, FormControl, Nav, Navbar, Row} from "react-bootstrap";
 import {urlImages} from "../../types/DefaultValue";
 
-const AppNavbar:React.FC = () => {
+const AppNavbar: React.FC = () => {
 
     return (
         <Navbar bg="black" variant="dark" expand="lg">

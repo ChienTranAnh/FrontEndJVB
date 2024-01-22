@@ -6,7 +6,9 @@ import {fetchTopRated} from "../../api";
 import PropsRecommended from "./PropsRecommended";
 
 const Recommended: React.FC = () => {
-    const {isLoading, data, error, isSuccess} = useQuery({queryKey:['topRated'], queryFn:fetchTopRated});
+    const {isLoading, data, error, isSuccess} = useQuery(
+        {queryKey: ['topRated'], queryFn: fetchTopRated}
+    );
 
     if (isLoading) {
         return (
@@ -31,7 +33,7 @@ const Recommended: React.FC = () => {
             <div className="justify-content-center">
                 <Row className="mb-4">
                     {
-                        isSuccess ? data.slice(0,8).map((movie)=>(
+                        isSuccess ? data.slice(0, 8).map((movie) => (
                             <PropsRecommended key={movie.id} movie={movie}/>
                         )) : <PropsRecommended movie={defaultMovie}/>
                     }

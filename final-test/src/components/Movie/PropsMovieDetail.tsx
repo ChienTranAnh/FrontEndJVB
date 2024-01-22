@@ -78,7 +78,7 @@ const PropsMovieDetail: React.FC<DetailMovieProps> = ({detailMovie}) => {
                         </Col>
                         <Col xs={6} sm={6} md={6} lg={6}>
                             <span>{
-                                detailMovie.production_countries && detailMovie.production_countries.map((country)=>(
+                                detailMovie.production_countries && detailMovie.production_countries.map((country) => (
                                     country.name
                                 )).join(', ')
                             }</span>
@@ -93,7 +93,7 @@ const PropsMovieDetail: React.FC<DetailMovieProps> = ({detailMovie}) => {
                         </Col>
                         <Col xs={6} sm={6} md={6} lg={6}>
                             <span>{
-                                detailMovie.genres && detailMovie.genres.map((gen)=>(
+                                detailMovie.genres && detailMovie.genres.map((gen) => (
                                     gen.name
                                 )).join(', ')
                             }</span>
@@ -119,7 +119,7 @@ const PropsMovieDetail: React.FC<DetailMovieProps> = ({detailMovie}) => {
                         </Col>
                         <Col xs={6} sm={6} md={6} lg={6}>
                             <span>{
-                                detailMovie.production_companies && detailMovie.production_companies.map((production)=>(
+                                detailMovie.production_companies && detailMovie.production_companies.map((production) => (
                                     production.name
                                 )).join(', ')
                             }</span>

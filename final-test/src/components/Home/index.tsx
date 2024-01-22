@@ -3,7 +3,7 @@ import Navbar from "../Navbar";
 import Recommended from "../Recommended";
 import Slider from "../Slider";
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
     return (
         <>
             <Navbar/>

@@ -3,6 +3,7 @@ import '../../App.css';
 import Common from "./Common";
 import AppNavbar from "../Navbar";
 import Recommended from "../Recommended";
+import Comments from "../Comments";
 
 const Movie: React.FC = () => {
     return (
@@ -10,6 +11,7 @@ const Movie: React.FC = () => {
             <AppNavbar/>
             <Common/>
             <Recommended/>
+            <Comments/>
         </div>
     );
 };
