@@ -3,9 +3,11 @@ export const urlMovie = 'https://api.themoviedb.org/3/movie';
 
 /* urlPoster */
 export const urlPoster = 'https://image.tmdb.org/t/p/w500';
+/* urlSlider */
+export const urlSlider = 'https://image.tmdb.org/t/p/original';
 
 /* urlImages */
-export const urlImages = './images';
+export const urlImages = '/images';
 
 /* authenticator */
 export const authenticator = {
@@ -21,13 +23,13 @@ export const defaultMovie = {
     adult: true,
     backdrop_path: `${urlImages}/noimage.jpg`,
     id: 0,
-    title: 'Black Night',
+    title: 'Title movie',
     original_language: 'EN',
-    original_title: '',
+    original_title: 'Original title movie',
     overview: '',
     poster_path: `${urlImages}/noimage.jpg`,
     media_type: '',
-    genre_ids: [1,2],
+    genre_ids: [9,9,9,1],
     popularity: 0,
     release_date: '',
     video: false,

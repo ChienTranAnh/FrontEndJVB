@@ -1,6 +1,13 @@
 import {authenticator, urlMovie} from "../types/DefaultValue";
 import {ObjGenres, ObjMovieDetail, ObjMovies, ObjReviewer, ObjVideoMovie} from "../types/Obj";
 
+export const fetchSlide = async (): Promise<ObjMovies[]> => {
+    const response = await fetch(`${urlMovie}/now_playing?language=en-US&page=1`, authenticator);
+    const data = await response.json();
+
+    return data.results;
+};
+
 export const fetchTopRated = async (): Promise<ObjMovies[]> => {
     const response = await fetch(`${urlMovie}/top_rated?language=en-US&page=1`, authenticator);
     const data = await response.json();

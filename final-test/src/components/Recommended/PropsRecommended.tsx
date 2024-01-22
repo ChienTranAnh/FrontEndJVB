@@ -30,9 +30,6 @@ const PropsRecommended: React.FC<MovieProps> = ({movie}) => {
                     }
                 </Col>
             </div>
-            <Routes>
-                <Route key={movie.id} path={'/movie/'+String(movie.id)}/>
-            </Routes>
         </Col>
     );
 };

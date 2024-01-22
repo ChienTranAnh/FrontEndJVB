@@ -4,20 +4,18 @@ import './App.css';
 import AppNavbar from "./components/Navbar";
 import Recommended from "./components/Recommended";
 import Comments from "./components/Comments";
-import Movie from "./components/Movie";
-
-const queryClient = new QueryClient();
+import Movie from "./components/Movie/Common";
+import Home from "./components/Home";
 
 function App() {
     return (
-        <QueryClientProvider client={queryClient}>
-            <div className="App">
-                <AppNavbar/>
-                <Movie/>
-                <Recommended/>
-                <Comments/>
-            </div>
-        </QueryClientProvider>
+        <div className="App">
+            <Home/>
+            {/*<AppNavbar/>
+            <Movie/>
+            <Recommended/>
+            <Comments/>*/}
+        </div>
     );
 };
 

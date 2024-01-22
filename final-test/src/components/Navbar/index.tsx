@@ -10,7 +10,7 @@ const AppNavbar:React.FC = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
                     <Nav className="mr-auto col-md-3">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="#genre">Genre</Nav.Link>
                         <Nav.Link href="#country">Country</Nav.Link>
                     </Nav>
