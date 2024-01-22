@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import {useQuery} from "@tanstack/react-query";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useParams} from "react-router-dom";
 import {defaultMovieDetail, defaultVideoMovie} from "../../types/DefaultValue";
 import PropsMovieDetail from "./PropsMovieDetail";
 import PropsPlayer from "./PropsPlayer";
@@ -9,8 +9,10 @@ import PropsVideoEp from "./PropsVideoEp";
 import {fetchDetailMovie, fetchMovieVideo} from "../../api";
 
 const Common: React.FC = () => {
-    const detailMovie = useQuery({queryKey: ['detailMovie'], queryFn: fetchDetailMovie});
-    const movieVideo = useQuery({queryKey: ['movieVideo'], queryFn: fetchMovieVideo});
+    let {movieKey} = useParams();
+
+    const detailMovie = useQuery({queryKey: ['detailMovie', movieKey], queryFn: () => fetchDetailMovie(movieKey ?? '906126')});
+    const movieVideo = useQuery({queryKey: ['movieVideo', movieKey], queryFn: () =>  fetchMovieVideo(movieKey ?? '906126')});
 
     if (detailMovie.error) {
         return <script>alert(`Error: {detailMovie.error.message}`)</script>;
@@ -35,10 +37,7 @@ const Common: React.FC = () => {
 
     return (
         <Container className="mt-5 mb-5">
-            <Routes>
-                <Route path="/video/:videoKey/*" element={<PropsPlayer/>}/>
-                <Route path="" element={<PropsPlayer/>}/>
-            </Routes>
+            <PropsPlayer/>
             {
                 detailMovie.isSuccess ? <PropsMovieDetail key={detailMovie.data.id} detailMovie={detailMovie.data}/> :
                     <PropsMovieDetail detailMovie={defaultMovieDetail}/>

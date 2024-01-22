@@ -5,6 +5,7 @@ import AppNavbar from "../Navbar";
 import Recommended from "../Recommended";
 
 const Movie: React.FC = () => {
+    console.log(1111);
     return (
         <div className="App">
             <AppNavbar/>
