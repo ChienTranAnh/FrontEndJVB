@@ -7,10 +7,12 @@ import {ObjMovieDetail, ObjVideoMovie} from "../../types/Obj";
 interface VideoEpProps {
     episode: ObjVideoMovie;
     movie: ObjMovieDetail;
+    firstEpisodeKey?: string | undefined | null;
 }
 
-const PropsVideoEp: React.FC<VideoEpProps> = ({episode, movie}) => {
-    let urlVideoKey = useParams();
+const PropsVideoEp: React.FC<VideoEpProps> = ({episode, movie, firstEpisodeKey}) => {
+    let {videoKey} = useParams();
+    let currentKey = videoKey ?? firstEpisodeKey;
 
     return (
         <Col xs={6} sm={6} md={6} lg={6}>
@@ -18,7 +20,7 @@ const PropsVideoEp: React.FC<VideoEpProps> = ({episode, movie}) => {
                 window.scrollTo({top: 0})
             }}>
                 {
-                    urlVideoKey.videoKey === String(episode.key)
+                    currentKey === String(episode.key)
                     ?
                     <Button variant="danger" className="w-100 p-2 text-start border-4">
                         <img src={`${urlImages}/play-white.svg`} alt="Icon play" className="me-2 mb-1"/>

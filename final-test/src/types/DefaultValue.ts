@@ -61,7 +61,7 @@ export const defaultReviewer = {
     author_details: {
             name: "Katherine Pierce Mikaelson",
             username: "msbArlene",
-            avatar_path: `${urlImages}/Ellipse 11.png`,
+            avatar_path: `${urlImages}/Ellipse11.png`,
             rating: 8
         },
     content: "Vampire Diaries Series",

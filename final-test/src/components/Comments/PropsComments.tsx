@@ -20,7 +20,7 @@ const PropsComments: React.FC<PropsReviewer> = ({reviewer}) => {
             <Col xs={2} sm={2} md={2} lg={2}>
                 <div>
                     <img src={
-                        reviewer.author_details.avatar_path ? `${urlPoster}` + reviewer.author_details.avatar_path : `${urlImages}/Ellipse 11.png`
+                        reviewer.author_details.avatar_path ? `${urlPoster}` + reviewer.author_details.avatar_path : `${urlImages}/Ellipse11.png`
                     } alt={reviewer.author_details.username}
                          style={{width: '160px', height: '160px', objectFit: "cover", borderRadius: '50%'}}/>
                 </div>

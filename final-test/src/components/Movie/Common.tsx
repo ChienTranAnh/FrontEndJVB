@@ -10,7 +10,7 @@ import PropsVideoEp from "./PropsVideoEp";
 
 const Common: React.FC = () => {
     let {movieKey} = useParams();
-    console.log(movieKey);
+
     const detailMovie = useQuery(
         {queryKey: ['detailMovie', movieKey], queryFn: () => fetchDetailMovie(movieKey ?? '129')}
     );
@@ -71,7 +71,16 @@ const Common: React.FC = () => {
                 <Row className="mt-3 gy-3">
                     {
                         movieVideo.isSuccess && detailMovie.isSuccess && movieVideo.data.map((video) => (
-                            <PropsVideoEp key={video.id} episode={video} movie={detailMovie.data}/>
+                            <PropsVideoEp
+                                key={video.id}
+                                episode={video}
+                                movie={detailMovie.data}
+                                firstEpisodeKey={
+                                    movieVideo.isSuccess && movieVideo.data?.length > 0
+                                        ? movieVideo.data[0].key
+                                        : null
+                                }
+                            />
                         ))
                     }
                 </Row>
